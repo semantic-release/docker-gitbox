@@ -1,13 +1,13 @@
 GITBOX
 ======
-Gitbox is a docker image that combines a preconfigured [git] (https://git-scm.com) server utilizing the git [smart-http] (https://git-scm.com/book/en/v2/Git-on-the-Server-Smart-HTTP) service for repository access. This is complemented by an installation of [gitlist] (https://github.com/klaussilveira/gitlist). Git smart-http and gitlist are served via [nginx] (http://nginx.org).
+Gitbox is a docker image that combines a preconfigured [git](https://git-scm.com) server utilizing the git [smart-http](https://git-scm.com/book/en/v2/Git-on-the-Server-Smart-HTTP) service for repository access. This is complemented by an installation of [gitlist](https://github.com/klaussilveira/gitlist). Git smart-http and gitlist are served via [nginx](http://nginx.org).
 
 Installation:
 -------------
 
-Gitbox requires docker to be installed and operational. You can then either download this image from [hub.docker.com] (https://hub.docker.com/r/nmarus/docker-gitbox/), or clone this repository from [github.com] (https://github.com) and build the image locally.
+Gitbox requires docker to be installed and operational. You can then either download this image from [hub.docker.com](https://hub.docker.com/r/nmarus/docker-gitbox/), or clone this repository from [github.com](https://github.com) and build the image locally.
 
-The [master branch] (https://github.com/nmarus/docker-gitbox) is where all development is done. The [stable branch] (https://github.com/nmarus/docker-gitbox/tree/stable) is where all feature testing has been completed. The [hub.docker.com] (https://hub.docker.com/r/nmarus/docker-gitbox/) repository is built from the stable branch. Review the [README.md] (https://github.com/nmarus/docker-gitbox/blob/stable/README.md) for the stable branch as it is often quite different than that of the master branch. The master branch is in flux and features are constantly being tweaked and added.
+The [master branch](https://github.com/nmarus/docker-gitbox) is where all development is done. The [stable branch](https://github.com/nmarus/docker-gitbox/tree/stable) is where all feature testing has been completed. The [hub.docker.com](https://hub.docker.com/r/nmarus/docker-gitbox/) repository is built from the stable branch. Review the [README.md](https://github.com/nmarus/docker-gitbox/blob/stable/README.md) for the stable branch as it is often quite different than that of the master branch. The master branch is in flux and features are constantly being tweaked and added.
 
 **To install and run from the hub.docker.com image repository:**
 
@@ -52,7 +52,7 @@ The following ports are published from this container:
 
 Server Repository Setup and Admin:
 ----------------------------------
-After installing gitbox, the first thing you will want to do is add some repositories. This can either be an empty repository, or an existing repository from another git server such as [github.com.] (https://github.com)
+After installing gitbox, the first thing you will want to do is add some repositories. This can either be an empty repository, or an existing repository from another git server such as [github.com.](https://github.com)
 
 To make this setup easier, gitbox allows an administrator to define the repositories directly from the docker host without needing to access the shell of the container or worry about setting proper permissions for security.
 
@@ -97,7 +97,7 @@ Client / Server Connection:
 ---------------------------
 **Setup client to use empty repository via https**
 
-*Note: This example assumes you have created a empty repository (as show above) named "myrepo.git". This is intended to be executed from your git client's command line inside a directory you wish to store the repository locally. See [Getting Started - Git Basics.] (https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)*
+*Note: This example assumes you have created a empty repository (as show above) named "myrepo.git". This is intended to be executed from your git client's command line inside a directory you wish to store the repository locally. See [Getting Started - Git Basics.](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)*
 
 From your git client cli:
 
