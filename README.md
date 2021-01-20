@@ -5,9 +5,9 @@ Gitbox is a docker image that combines a preconfigured [git](https://git-scm.com
 Installation:
 -------------
 
-Gitbox requires docker to be installed and operational. You can then either download this image from [hub.docker.com](https://hub.docker.com/r/nmarus/docker-gitbox/), or clone this repository from [github.com](https://github.com) and build the image locally.
+Gitbox requires docker to be installed and operational. You can then either download this image from [hub.docker.com](https://hub.docker.com/r/pvdlg/docker-gitbox/), or clone this repository from [github.com](https://github.com) and build the image locally.
 
-The [master branch](https://github.com/nmarus/docker-gitbox) is where all development is done. The [stable branch](https://github.com/nmarus/docker-gitbox/tree/stable) is where all feature testing has been completed. The [hub.docker.com](https://hub.docker.com/r/nmarus/docker-gitbox/) repository is built from the stable branch. Review the [README.md](https://github.com/nmarus/docker-gitbox/blob/stable/README.md) for the stable branch as it is often quite different than that of the master branch. The master branch is in flux and features are constantly being tweaked and added.
+The [master branch](https://github.com/pvdlg/docker-gitbox) is where all development is done. The [stable branch](https://github.com/pvdlg/docker-gitbox/tree/stable) is where all feature testing has been completed. The [hub.docker.com](https://hub.docker.com/r/pvdlg/docker-gitbox/) repository is built from the stable branch. Review the [README.md](https://github.com/pvdlg/docker-gitbox/blob/stable/README.md) for the stable branch as it is often quite different than that of the master branch. The master branch is in flux and features are constantly being tweaked and added.
 
 **To install and run from the hub.docker.com image repository:**
 
@@ -20,22 +20,22 @@ From your docker host (or remote docker client):
         -p 80:80 \
         -v /srv/gitbox/repos:/repos \
         -v /srv/gitbox/ng-auth:/ng-auth \
-        nmarus/docker-gitbox
+        pvdlg/docker-gitbox
 
 **To install and run from this from the github source repository:**
 
 From your docker host:
 
-    git clone https://github.com/nmarus/docker-gitbox.git
+    git clone https://github.com/pvdlg/docker-gitbox.git
     cd docker-gitbox
-    docker build --rm -t nmarus/docker-gitbox .
+    docker build --rm -t pvdlg/docker-gitbox .
     docker run -d -it --name gitbox \
         --restart=always \
         -h <container_fqdn> \
         -p 80:80 \
         -v /srv/gitbox/repos:/repos \
         -v /srv/gitbox/ng-auth:/ng-auth \
-        nmarus/docker-gitbox
+        pvdlg/docker-gitbox
 
 Container to Volume Mapping:
 ----------------------------
@@ -74,7 +74,7 @@ From your docker host (or remote docker client):
 
 *example:*
 
-    docker exec gitbox repo-admin -c https://github.com/nmarus/docker-gitbox.git
+    docker exec gitbox repo-admin -c https://github.com/pvdlg/docker-gitbox.git
 
 **To remove a gitbox repository:**
 
