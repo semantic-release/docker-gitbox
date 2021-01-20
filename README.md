@@ -1,6 +1,6 @@
 GITBOX
 ======
-Gitbox is a docker image that combines a preconfigured [git](https://git-scm.com) server utilizing the git [smart-http](https://git-scm.com/book/en/v2/Git-on-the-Server-Smart-HTTP) service for repository access. This is complemented by an installation of [gitlist](https://github.com/klaussilveira/gitlist). Git smart-http and gitlist are served via [nginx](http://nginx.org).
+Gitbox is a docker image that combines a preconfigured [git](https://git-scm.com) server utilizing the git [smart-http](https://git-scm.com/book/en/v2/Git-on-the-Server-Smart-HTTP) service for repository access. This is complemented by an installation of [gitlist](https://github.com/klaussilveira/gitlist). Git **smart-http** and **gitlist** are served via [nginx](http://nginx.org).
 
 Installation:
 -------------
@@ -41,14 +41,14 @@ Container to Volume Mapping:
 ----------------------------
 The following volumes are published from this container:
 
-* /repos - This is the location where your repositories live
-* /ng-auth - This is the location of the htpasswd file that nginx uses for gitlist and git smart-http authentication
+* `/repos` - This is the location where your repositories live
+* `/ng-auth` - This is the location of the htpasswd file that nginx uses for **gitlist** and git **smart-http** authentication
 
 Container to Network Mapping:
 -----------------------------
 The following ports are published from this container:
 
-* 80 - http access for git smart-http and gitlist access
+* `80` - http access for git **smart-http** and **gitlist** access
 
 Server Repository Setup and Admin:
 ----------------------------------
@@ -97,7 +97,7 @@ Client / Server Connection:
 ---------------------------
 **Setup client to use empty repository via https**
 
-*Note: This example assumes you have created a empty repository (as show above) named "myrepo.git". This is intended to be executed from your git client's command line inside a directory you wish to store the repository locally. See [Getting Started - Git Basics.](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)*
+*Note: This example assumes you have created a empty repository (as show above) named `myrepo.git`. This is intended to be executed from your git client's command line inside a directory you wish to store the repository locally. See [Getting Started - Git Basics.](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)*
 
 From your git client cli:
 
@@ -133,7 +133,7 @@ From your git client cli:
 
 Authentication:
 ---------------
-The authentication method and interaction with git and gitlist is still a work in progress. That being said, some authentication is in place through modifications of the nginx htpasswd file. This authentication applies to read and write access via the git smart-http protocol and view access to the gitlist web interface. The htpasswd file is stored in the "/ng-auth" volume and the start.sh script looks for the htpasswd file in this directory on startup. It will only regenerate the htpasswd file when it is not found.
+The authentication method and interaction with git and **gitlist** is still a work in progress. That being said, some authentication is in place through modifications of the nginx htpasswd file. This authentication applies to read and write access via the git **smart-http** protocol and view access to the **gitlist** web interface. The htpasswd file is stored in the `/ng-auth` volume and the `start.sh` script looks for the htpasswd file in this directory on startup. It will only regenerate the htpasswd file when it is not found.
 
 **To grab the initial gitadmin password:**
 
@@ -169,4 +169,4 @@ From your docker host (or remote docker client):
 
 SSL:
 ----
-Native SSL is not provided, but can be added through manipulating the /etc/nginx/nginx.conf file and uploading the appropriate certificates. This container also supports being placed behind a reverse SSL proxy (such as nginx).
+Native SSL is not provided, but can be added through manipulating the `/etc/nginx/nginx.conf` file and uploading the appropriate certificates. This container also supports being placed behind a reverse SSL proxy (such as nginx).
