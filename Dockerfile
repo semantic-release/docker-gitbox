@@ -3,7 +3,6 @@
 # Pierre Vanduynslager <pierre.denis.vanduynslager@gmail.com>
 
 FROM debian:jessie
-MAINTAINER Pierre Vanduynslager <pierre.denis.vanduynslager@gmail.com>
 
 # Setup Container
 VOLUME ["/repos"]
@@ -18,7 +17,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 
 # Update, Install Prerequisites, Clean Up APT
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update && \
-    apt-get -y install git wget nginx-full php5-fpm fcgiwrap apache2-utils && \
+    apt-get -y install git curl nginx-full php5-fpm fcgiwrap apache2-utils && \
     apt-get clean
 
 # Setup Container User
@@ -37,8 +36,9 @@ RUN sed -i 's/FCGI_USER="www-data"/FCGI_USER="git"/g' /etc/init.d/fcgiwrap && \
     sed -i 's/FCGI_SOCKET_GROUP="www-data"/FCGI_SOCKET_GROUP="git"/g' /etc/init.d/fcgiwrap
 
 # Install gitlist
+
 RUN mkdir -p /var/www && \
-    wget -q -O /var/www/gitlist-v1.0.1.tar.gz https://github.com/klaussilveira/gitlist/releases/download/v1.0.1/gitlist-v1.0.1.tar.gz && \
+    curl -L https://github.com/klaussilveira/gitlist/releases/download/1.0.1/gitlist-1.0.1.tar.gz --output /var/www/gitlist-v1.0.1.tar.gz && \
     tar -zxvf /var/www/gitlist-v1.0.1.tar.gz -C /var/www && \
     chmod -R 777 /var/www/gitlist && \
     mkdir -p /var/www/gitlist/cache && \
