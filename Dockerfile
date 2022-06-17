@@ -1,6 +1,6 @@
 # gitbox with gitlist v.1.0.1
-# https://github.com/nmarus/docker-gitbox
-# Nicholas Marus <nmarus@gmail.com>
+# https://github.com/pvdlg/docker-gitbox
+# Pierre Vanduynslager <pierre.denis.vanduynslager@gmail.com>
 
 FROM debian:jessie
 
