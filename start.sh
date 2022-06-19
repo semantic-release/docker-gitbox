@@ -38,7 +38,7 @@ sflog() {
 #start services function
 startc() {
     sflog "Services for container are being started..."
-    /etc/init.d/php5-fpm start > /dev/null
+    /etc/init.d/php7.0-fpm start > /dev/null
     /etc/init.d/fcgiwrap start > /dev/null
     /etc/init.d/nginx start > /dev/null
     sflog "The container services have started..."
@@ -48,7 +48,7 @@ startc() {
 stopc() {
     sflog "Services for container are being stopped..."
     /etc/init.d/nginx stop > /dev/null
-    /etc/init.d/php5-fpm stop > /dev/null
+    /etc/init.d/php7.0-fpm stop > /dev/null
     /etc/init.d/fcgiwrap stop > /dev/null
     sflog "Services for container have successfully stopped. Exiting."
 }

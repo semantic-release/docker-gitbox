@@ -2,7 +2,7 @@
 # https://github.com/pvdlg/docker-gitbox
 # Pierre Vanduynslager <pierre.denis.vanduynslager@gmail.com>
 
-FROM debian:jessie
+FROM debian:stretch-slim
 
 # Setup Container
 VOLUME ["/repos"]
@@ -17,17 +17,17 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 
 # Update, Install Prerequisites, Clean Up APT
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update && \
-    apt-get -y install git curl nginx-full php5-fpm fcgiwrap apache2-utils && \
+    apt-get -y install git curl nginx-full php7.0-fpm fcgiwrap apache2-utils && \
     apt-get clean
 
 # Setup Container User
 RUN useradd -M -s /bin/false git --uid 1000
 
 # Setup nginx php-fpm services to run as user git, group git
-RUN sed -i 's/user = www-data/user = git/g' /etc/php5/fpm/pool.d/www.conf && \
-    sed -i 's/group = www-data/group = git/g' /etc/php5/fpm/pool.d/www.conf && \
-    sed -i 's/listen.owner = www-data/listen.owner = git/g' /etc/php5/fpm/pool.d/www.conf && \
-    sed -i 's/listen.group = www-data/listen.group = git/g' /etc/php5/fpm/pool.d/www.conf
+RUN sed -i 's/user = www-data/user = git/g' /etc/php/7.0/fpm/pool.d/www.conf && \
+    sed -i 's/group = www-data/group = git/g' /etc/php/7.0/fpm/pool.d/www.conf && \
+    sed -i 's/listen.owner = www-data/listen.owner = git/g' /etc/php/7.0/fpm/pool.d/www.conf && \
+    sed -i 's/listen.group = www-data/listen.group = git/g' /etc/php/7.0/fpm/pool.d/www.conf
 
 # Setup nginx fcgi services to run as user git, group git
 RUN sed -i 's/FCGI_USER="www-data"/FCGI_USER="git"/g' /etc/init.d/fcgiwrap && \
