@@ -79,7 +79,7 @@ ng-auth-init() {
         rm -f ${AUTH}/${ADMIN}.password &> /dev/null
         #check if htpasswd exists
         if [ ! -e ${AUTH}/htpasswd ]; then
-            sflog "Generating htpassed file and default account ${ADMIN}"
+            sflog "Generating htpasswd file and default account ${ADMIN}"
             #generate random password
             ADMINPASS=$(openssl rand -base64 8)
             #store password to file

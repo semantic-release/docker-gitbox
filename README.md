@@ -114,7 +114,7 @@ From your git client cli:
 
 *Note 1: This process will require authentication to the nginx web server on clone, pull, or push. See Authentication.*
 
-*Note 2: This reuires you at least add one file, commit that file and push it using the last 3 commands. Not doing do will cause git push and git pull to fail.*
+*Note 2: This requires you at least add one file, commit that file and push it using the last 3 commands. Not doing do will cause git push and git pull to fail.*
 
 **Gitlist Browser Access:**
 

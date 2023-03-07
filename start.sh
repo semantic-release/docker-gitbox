@@ -58,7 +58,7 @@ trap "(stopc)" TERM
 
 #startup
 
-#test for ENV varibale $FQDN
+#test for ENV variable $FQDN
 if [ ! -z ${FQDN+x} ]; then
     sflog "FQDN is set to ${FQDN}"
 else
